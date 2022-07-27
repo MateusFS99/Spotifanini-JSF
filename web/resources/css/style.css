@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap%27');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, Sans-serif;
+    outline: 0;
+}
+
+html, body {
+
+    height: 100%;
+}
+
+.sidebar {
+
+    float: left;
+    width: 250px;
+    padding: 10px 10px;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: black;
+}
+
+.sidebar-wraper {
+
+    padding-bottom: 200px;
+}
+
+.sidebar-menu {
+
+    margin: 20px 0;
+    color: rgb(190, 190, 190);
+}
+
+.sidebar-logo img {
+
+    max-width: 250px;
+    width: 100%;
+}
+
+.sidebar-menu a {
+
+    color: rgb(190, 190, 190);
+    text-decoration: none;
+    display: block;
+    padding: 10px 0;
+}
+
+.sidebar-menu svg {
+    
+    margin: 0 20px;
+}
+
+.sidebar-menu a.sidebar-menu-selected {
+
+    color: white;
+    background-color: rgb(80, 80, 80);
+    border-radius: 5px;
+}
+
+.sidebar-menu-item {
+
+    margin-top: 12px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.sidebar-menu p.sidebar-menu-title {
+
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.sidebar-menu-item #link {
+
+    font-weight: bold;
+    font-size: 14px;
+    padding: 0 10px;
+}
+
+.sidebar-menu-item img {
+
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.sidebar-playlists {
+
+    padding: 20px 0;
+    border-top: 1px solid rgb(40, 40, 40);
+}
+
+.sidebar-playlists a {
+
+    margin: 10px 0;
+    display: block;
+    color: rgb(190, 190, 190);
+    text-decoration: none;
+}
+
+.sidebar-playlists a:hover {
+
+    color: white;
+}
+
+.main {
+
+    width: calc(100% - 250px);
+    background-color: rgb(18, 18, 18);
+    height: 100%;
+    float: left;
+    padding: 15px 50px;
+    overflow-y: auto;
+}
+
+.main-row {
+
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.main-wraper {
+
+    padding-bottom: 200px;
+}
+
+.main-row-title {
+
+    width: 100%;
+}
+
+.main-row-title h2 {
+
+    color: white;
+}
+
+.main-col {
+
+    cursor: pointer;
+    width: 10%;
+    margin-top: 5px;
+    margin-right: 1%;
+    background-color: #282828;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+}
+
+.main-col h3 {
+
+    color: white;
+    margin: 8px 0;
+    text-align: left;
+}
+
+.main-col p {
+
+    color: rgb(100, 100, 100);
+    margin: 8px 0;
+    font-size: 13px;
+    text-align: left;
+}
+
+.main-col img {
+
+    max-width: 180px;
+    max-height: 180px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.player {
+
+    width: 100%;
+    padding: 5px;
+    height: 80px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    background-color: rgb(24, 24, 24);
+}
+
+.player-artist {
+
+    width: 20%;
+}
+
+.player-artist img {
+
+    max-width: 64px;
+    max-height: 64px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.player-artist h3 {
+
+    display: inline-block;
+    color: white;
+    font-weight: normal;
+    font-size: 15px;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+.player-artist h3 > span{
+
+    color: rgb(200, 200, 200);
+    font-size: 13px;
+}
+
+.player-control {
+
+    padding: 5px;
+    width: 60%;
+    text-align: center;
+}
+
+.player-control-buttons a {
+
+    color: white;
+    margin: 8px 15px;
+    font-size: 18px;
+}
+
+.player-control-progress {
+
+    width: 100%;
+    max-width: 600px;
+    height: 7px;
+    margin-top: 20px;
+    position: relative;
+    border-radius: 8px;
+    display: inline-block;
+    background: rgb(94, 94, 94);
+}
+
+.player-control-progress-2 {
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20%;
+    height: 7px;
+    border-radius: 8px;
+    background-color: white;
+}
+
+.player-control-progress-2:hover {
+
+    background-color: rgb(29, 185, 84);
+}
+
+@media screen and (max-width: 1700px) {
+    
+    .main-col {
+
+        width: 20%;
+    }
+}
+
+@media screen and (max-width: 100px) {
+    
+    .main {
+
+        width: 100%;
+    }
+    
+    .sidebar {
+
+        display: none;
+    }
+
+    .main-col {
+
+        width: 49%;
+        margin-right: 2%;
+    }
+}
+
+#audio-player {
+
+    position: absolute; 
+    left: 0; 
+    display: none;
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="ArtistEditDlg" widgetVar="ArtistEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditArtistTitle}">
+            <h:form id="ArtistEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{artistController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditArtistLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{artistController.selected.id}" title="#{bundle.EditArtistTitle_id}" required="true" requiredMessage="#{bundle.EditArtistRequiredMessage_id}"/>
+                        <p:outputLabel value="#{bundle.EditArtistLabel_name}" for="name" />
+                        <p:inputText id="name" value="#{artistController.selected.name}" title="#{bundle.EditArtistTitle_name}" />
+                        <p:outputLabel value="#{bundle.EditArtistLabel_country}" for="country" />
+                        <p:inputText id="country" value="#{artistController.selected.country}" title="#{bundle.EditArtistTitle_country}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{artistController.update}" value="#{bundle.Save}" update="display,:ArtistListForm:datalist,:growl" oncomplete="handleSubmit(args, 'ArtistEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="ArtistEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
