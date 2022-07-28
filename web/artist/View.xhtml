@@ -8,18 +8,18 @@
 
     <ui:composition>
 
-        <p:dialog id="ArtistViewDlg" widgetVar="ArtistViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewArtistTitle}">
+        <p:dialog id="ArtistViewDlg" widgetVar="ArtistViewDialog" modal="true" resizable="false" appendTo="@(body)" header="Detalhes">
             <h:form id="ArtistViewForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{artistController.selected != null}">
-                        <h:outputText value="#{bundle.ViewArtistLabel_id}"/>
+                        <h:outputText value="ID"/>
                         <h:outputText value="#{artistController.selected.id}" title="#{bundle.ViewArtistTitle_id}"/>
-                        <h:outputText value="#{bundle.ViewArtistLabel_name}"/>
+                        <h:outputText value="Nome"/>
                         <h:outputText value="#{artistController.selected.name}" title="#{bundle.ViewArtistTitle_name}"/>
-                        <h:outputText value="#{bundle.ViewArtistLabel_country}"/>
+                        <h:outputText value="País de Origem"/>
                         <h:outputText value="#{artistController.selected.country}" title="#{bundle.ViewArtistTitle_country}"/>
                     </p:panelGrid>
-                    <p:commandButton value="#{bundle.Close}" onclick="ArtistViewDialog.hide()"/>
+                    <p:commandButton value="Fechar" onclick="ArtistViewDialog.hide()"/>
                 </h:panelGroup>
             </h:form>
         </p:dialog>

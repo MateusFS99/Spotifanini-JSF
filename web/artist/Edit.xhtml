@@ -8,19 +8,19 @@
 
     <ui:composition>
 
-        <p:dialog id="ArtistEditDlg" widgetVar="ArtistEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditArtistTitle}">
+        <p:dialog id="ArtistEditDlg" widgetVar="ArtistEditDialog" modal="true" resizable="false" appendTo="@(body)" header="Editar Artista">
             <h:form id="ArtistEditForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{artistController.selected != null}">
-                        <p:outputLabel value="#{bundle.EditArtistLabel_id}" for="id" />
+                        <p:outputLabel value="ID" for="id" />
                         <p:inputText id="id" value="#{artistController.selected.id}" title="#{bundle.EditArtistTitle_id}" required="true" requiredMessage="#{bundle.EditArtistRequiredMessage_id}"/>
-                        <p:outputLabel value="#{bundle.EditArtistLabel_name}" for="name" />
+                        <p:outputLabel value="Nome" for="name" />
                         <p:inputText id="name" value="#{artistController.selected.name}" title="#{bundle.EditArtistTitle_name}" />
-                        <p:outputLabel value="#{bundle.EditArtistLabel_country}" for="country" />
+                        <p:outputLabel value="País de Origem" for="country" />
                         <p:inputText id="country" value="#{artistController.selected.country}" title="#{bundle.EditArtistTitle_country}" />
                     </p:panelGrid>
-                    <p:commandButton actionListener="#{artistController.update}" value="#{bundle.Save}" update="display,:ArtistListForm:datalist,:growl" oncomplete="handleSubmit(args, 'ArtistEditDialog');"/>
-                    <p:commandButton value="#{bundle.Cancel}" onclick="ArtistEditDialog.hide()"/>
+                    <p:commandButton actionListener="#{artistController.update}" value="Atualizar" update="display,:ArtistListForm:datalist,:growl" oncomplete="handleSubmit(args, 'ArtistEditDialog');"/>
+                    <p:commandButton value="Cancelar" onclick="ArtistEditDialog.hide()"/>
                 </h:panelGroup>
             </h:form>
         </p:dialog>

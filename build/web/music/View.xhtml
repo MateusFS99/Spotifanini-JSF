@@ -8,22 +8,22 @@
 
     <ui:composition>
 
-        <p:dialog id="MusicViewDlg" widgetVar="MusicViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewMusicTitle}">
+        <p:dialog id="MusicViewDlg" widgetVar="MusicViewDialog" modal="true" resizable="false" appendTo="@(body)" header="Detalhes">
             <h:form id="MusicViewForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{musicController.selected != null}">
-                        <h:outputText value="#{bundle.ViewMusicLabel_id}"/>
+                        <h:outputText value="ID"/>
                         <h:outputText value="#{musicController.selected.id}" title="#{bundle.ViewMusicTitle_id}"/>
-                        <h:outputText value="#{bundle.ViewMusicLabel_name}"/>
+                        <h:outputText value="Nome"/>
                         <h:outputText value="#{musicController.selected.name}" title="#{bundle.ViewMusicTitle_name}"/>
-                        <h:outputText value="#{bundle.ViewMusicLabel_release}"/>
+                        <h:outputText value="Ano de Lançamento"/>
                         <h:outputText value="#{musicController.selected.release}" title="#{bundle.ViewMusicTitle_release}"/>
-                        <h:outputText value="#{bundle.ViewMusicLabel_genre}"/>
+                        <h:outputText value="Gênero"/>
                         <h:outputText value="#{musicController.selected.genre}" title="#{bundle.ViewMusicTitle_genre}"/>
-                        <h:outputText value="#{bundle.ViewMusicLabel_artist}"/>
+                        <h:outputText value="Artista"/>
                         <h:outputText value="#{musicController.selected.artist.name}" title="#{bundle.ViewMusicTitle_artist}"/>
                     </p:panelGrid>
-                    <p:commandButton value="#{bundle.Close}" onclick="MusicViewDialog.hide()"/>
+                    <p:commandButton value="Fechar" onclick="MusicViewDialog.hide()"/>
                 </h:panelGroup>
             </h:form>
         </p:dialog>

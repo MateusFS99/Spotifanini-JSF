@@ -10,12 +10,12 @@
 
 
         <ui:define name="title">
-            <h:outputText value="Lista de Artistas"></h:outputText>
+            <h:outputText value="Artistas"></h:outputText>
         </ui:define>
 
         <ui:define name="body">
             <h:form id="ArtistListForm">
-                <p:panel header="#{bundle.ListArtistTitle}">
+                <p:panel header="Lista de Artistas">
                     <p:dataTable id="datalist" value="#{artistController.items}" var="item"
                                  selectionMode="single" selection="#{artistController.selected}"
                                  paginator="true"
@@ -29,27 +29,27 @@
 
                         <p:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListArtistTitle_id}"/>
+                                <h:outputText value="ID"/>
                             </f:facet>
                             <h:outputText value="#{item.id}"/>
                         </p:column>
                         <p:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListArtistTitle_name}"/>
+                                <h:outputText value="Nome"/>
                             </f:facet>
                             <h:outputText value="#{item.name}"/>
                         </p:column>
                         <p:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListArtistTitle_country}"/>
+                                <h:outputText value="País"/>
                             </f:facet>
                             <h:outputText value="#{item.country}"/>
                         </p:column>
                         <f:facet name="footer">
-                            <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{artistController.prepareCreate}" update=":ArtistCreateForm" oncomplete="PF('ArtistCreateDialog').show()"/>
-                            <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":ArtistViewForm" oncomplete="PF('ArtistViewDialog').show()" disabled="#{empty artistController.selected}"/>
-                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="#{bundle.Edit}" update=":ArtistEditForm" oncomplete="PF('ArtistEditDialog').show()" disabled="#{empty artistController.selected}"/>
-                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{bundle.Delete}" actionListener="#{artistController.destroy}" update=":growl,datalist" disabled="#{empty artistController.selected}"/>
+                            <p:commandButton id="createButton" icon="ui-icon-plus"   value="Novo" actionListener="#{artistController.prepareCreate}" update=":ArtistCreateForm" oncomplete="PF('ArtistCreateDialog').show()"/>
+                            <p:commandButton id="viewButton"   icon="ui-icon-search" value="Detalhes" update=":ArtistViewForm" oncomplete="PF('ArtistViewDialog').show()" disabled="#{empty artistController.selected}"/>
+                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="Editar" update=":ArtistEditForm" oncomplete="PF('ArtistEditDialog').show()" disabled="#{empty artistController.selected}"/>
+                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="Excluir" actionListener="#{artistController.destroy}" update=":growl,datalist" disabled="#{empty artistController.selected}"/>
                         </f:facet>
                     </p:dataTable>
                 </p:panel>

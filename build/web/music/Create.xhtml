@@ -8,19 +8,19 @@
 
     <ui:composition>
 
-        <p:dialog id="MusicCreateDlg" widgetVar="MusicCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateMusicTitle}">
+        <p:dialog id="MusicCreateDlg" widgetVar="MusicCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="Criar Nova Música">
             <h:form id="MusicCreateForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{musicController.selected != null}">
-                        <p:outputLabel value="#{bundle.CreateMusicLabel_id}" for="id" />
+                        <p:outputLabel value="ID" for="id" />
                         <p:inputText id="id" value="#{musicController.selected.id}" title="#{bundle.CreateMusicTitle_id}" required="true" requiredMessage="#{bundle.CreateMusicRequiredMessage_id}"/>
-                        <p:outputLabel value="#{bundle.CreateMusicLabel_name}" for="name" />
+                        <p:outputLabel value="Nome" for="name" />
                         <p:inputText id="name" value="#{musicController.selected.name}" title="#{bundle.CreateMusicTitle_name}" />
-                        <p:outputLabel value="#{bundle.CreateMusicLabel_release}" for="release" />
+                        <p:outputLabel value="Ano de Lançamento" for="release" />
                         <p:inputText id="release" value="#{musicController.selected.release}" title="#{bundle.CreateMusicTitle_release}" />
-                        <p:outputLabel value="#{bundle.CreateMusicLabel_genre}" for="genre" />
+                        <p:outputLabel value="Gênero" for="genre" />
                         <p:inputText id="genre" value="#{musicController.selected.genre}" title="#{bundle.CreateMusicTitle_genre}" />
-                        <p:outputLabel value="#{bundle.CreateMusicLabel_artist}" for="artist" />
+                        <p:outputLabel value="Artista" for="artist" />
                         <p:selectOneMenu id="artist" value="#{musicController.selected.artist}" >
                             <f:selectItems value="#{artistController.itemsAvailableSelectOne}"
                                            var="artistItem"
@@ -28,8 +28,8 @@
                                            itemLabel="#{artistItem.name}"/>
                         </p:selectOneMenu>
                     </p:panelGrid>
-                    <p:commandButton actionListener="#{musicController.create}" value="#{bundle.Save}" update="display,:MusicListForm:datalist,:growl" oncomplete="handleSubmit(args,'MusicCreateDialog');"/>
-                    <p:commandButton value="#{bundle.Cancel}" onclick="MusicCreateDialog.hide()"/>
+                    <p:commandButton actionListener="#{musicController.create}" value="Salvar" update="display,:MusicListForm:datalist,:growl" oncomplete="handleSubmit(args,'MusicCreateDialog');"/>
+                    <p:commandButton value="Cancelar" onclick="MusicCreateDialog.hide()"/>
                 </h:panelGroup>
             </h:form>
         </p:dialog>
