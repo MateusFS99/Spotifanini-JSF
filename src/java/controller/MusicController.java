@@ -109,7 +109,7 @@ public class MusicController implements Serializable {
         }
     }
 
-    public Music getMusic(java.lang.Integer id) {
+    public Music getMusic(java.lang.Long id) {
         return getFacade().find(id);
     }
 
@@ -134,13 +134,13 @@ public class MusicController implements Serializable {
             return controller.getMusic(getKey(value));
         }
 
-        java.lang.Integer getKey(String value) {
-            java.lang.Integer key;
-            key = Integer.valueOf(value);
+        java.lang.Long getKey(String value) {
+            java.lang.Long key;
+            key = Long.valueOf(value);
             return key;
         }
 
-        String getStringKey(java.lang.Integer value) {
+        String getStringKey(java.lang.Long value) {
             StringBuilder sb = new StringBuilder();
             sb.append(value);
             return sb.toString();

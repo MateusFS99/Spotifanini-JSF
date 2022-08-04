@@ -8,6 +8,7 @@ package dao;
 import java.io.Serializable;
 import java.util.Collection;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -25,14 +26,14 @@ import javax.xml.bind.annotation.XmlTransient;
  * @author Mateus
  */
 @Entity
-@Table(name = "artist")
+@Table(name = "playlist")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Artist.findAll", query = "SELECT a FROM Artist a")
-    , @NamedQuery(name = "Artist.findById", query = "SELECT a FROM Artist a WHERE a.id = :id")
-    , @NamedQuery(name = "Artist.findByName", query = "SELECT a FROM Artist a WHERE a.name = :name")
-    , @NamedQuery(name = "Artist.findByCountry", query = "SELECT a FROM Artist a WHERE a.country = :country")})
-public class Artist implements Serializable {
+    @NamedQuery(name = "Playlist.findAll", query = "SELECT p FROM Playlist p")
+    , @NamedQuery(name = "Playlist.findById", query = "SELECT p FROM Playlist p WHERE p.id = :id")
+    , @NamedQuery(name = "Playlist.findByTitle", query = "SELECT p FROM Playlist p WHERE p.title = :title")
+    , @NamedQuery(name = "Playlist.findByDescription", query = "SELECT p FROM Playlist p WHERE p.description = :description")})
+public class Playlist implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -41,18 +42,18 @@ public class Artist implements Serializable {
     @Column(name = "id")
     private Long id;
     @Size(max = 30)
-    @Column(name = "name")
-    private String name;
-    @Size(max = 40)
-    @Column(name = "country")
-    private String country;
-    @OneToMany(mappedBy = "artist")
-    private Collection<Music> musicCollection;
+    @Column(name = "title")
+    private String title;
+    @Size(max = 100)
+    @Column(name = "description")
+    private String description;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idPlaylist")
+    private Collection<Musicplaylist> musicplaylistCollection;
 
-    public Artist() {
+    public Playlist() {
     }
 
-    public Artist(Long id) {
+    public Playlist(Long id) {
         this.id = id;
     }
 
@@ -64,29 +65,29 @@ public class Artist implements Serializable {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getCountry() {
-        return country;
+    public String getDescription() {
+        return description;
     }
 
-    public void setCountry(String country) {
-        this.country = country;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     @XmlTransient
-    public Collection<Music> getMusicCollection() {
-        return musicCollection;
+    public Collection<Musicplaylist> getMusicplaylistCollection() {
+        return musicplaylistCollection;
     }
 
-    public void setMusicCollection(Collection<Music> musicCollection) {
-        this.musicCollection = musicCollection;
+    public void setMusicplaylistCollection(Collection<Musicplaylist> musicplaylistCollection) {
+        this.musicplaylistCollection = musicplaylistCollection;
     }
 
     @Override
@@ -99,10 +100,10 @@ public class Artist implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Artist)) {
+        if (!(object instanceof Playlist)) {
             return false;
         }
-        Artist other = (Artist) object;
+        Playlist other = (Playlist) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -111,7 +112,7 @@ public class Artist implements Serializable {
 
     @Override
     public String toString() {
-        return "dao.Artist[ id=" + id + " ]";
+        return "dao.Playlist[ id=" + id + " ]";
     }
     
 }
