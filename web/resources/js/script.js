@@ -38,7 +38,7 @@ const playSong = (file) => {
     play();
 }
 
-document.querySelectorAll('.main-col').forEach(item => {
+document.querySelectorAll('#main-col-music').forEach(item => {
 
     item.addEventListener('click', event => {
 

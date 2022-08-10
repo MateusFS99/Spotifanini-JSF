@@ -6,9 +6,8 @@
 
     <h:head>
         <title>Spotifanini</title>
-        <h:outputStylesheet name="css/jsfcrud.css"/>
-        <h:outputStylesheet library="css" name="jsfcrud.css" />
-        <h:outputStylesheet library="css" name="style.css" />
+        <h:outputStylesheet library="css" name="jsfcrud.css"/>
+        <h:outputStylesheet library="css" name="style.css"/>
     </h:head>
     
     <h:body>
@@ -36,8 +35,6 @@
         </div>
 
         <ui:insert name="body"/>
-        
-        <ui:insert name="header"/>
 
         <div class="player">
             <div class="player-artist">
@@ -62,6 +59,7 @@
 
         <audio id="audio-player" controls=""></audio>
 
+        <h:outputScript library="js" name="jsfcrud.js"/>
         <h:outputScript library="js" name="all.min.js" />
         <h:outputScript library="js" name="script.js" />
     </h:body>
