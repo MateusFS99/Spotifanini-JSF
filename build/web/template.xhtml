@@ -2,8 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
 
     <h:head>
         <title>Spotifanini</title>
@@ -16,7 +15,7 @@
         <div class="sidebar">
             <div class="sidebar-wraper">
                 <div class="sidebar-logo">
-                    <img src="./resources/images/logo.png" />
+                    <img src="../resources/images/logo.png" />
                 </div>
 
                 <div class="sidebar-menu">
@@ -36,9 +35,9 @@
             </div>
         </div>
 
-        <p:layoutUnit position="center">
-            <ui:insert name="body"/>
-        </p:layoutUnit>
+        <ui:insert name="body"/>
+        
+        <ui:insert name="header"/>
 
         <div class="player">
             <div class="player-artist">

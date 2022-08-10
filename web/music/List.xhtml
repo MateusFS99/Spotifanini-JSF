@@ -2,7 +2,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui">
 
     <ui:composition template="/template.xhtml">
@@ -14,16 +13,14 @@
                         <div class="main-row-title">
                             <h2>Músicas</h2>
                         </div>
-                        <h:form id="MusicListForm">
-                            <p:repeat value="#{musicController.items}" var="item">
-                                <div class="main-col" data-image="../resources/images/direstraits.jpg" data-artist="#{item.artist.name}"
-                                    data-song="#{item.name}" data-file="../resources/musics/Dire Straits - Money for Nothing.mp3">
-                                    <img src="../resources/images/direstraits.jpg" />
-                                    <h3>#{item.name}</h3>
-                                    <p>#{item.artist.name}</p>
-                                </div>
-                            </p:repeat>
-                        </h:form>    
+                        <p:repeat value="#{musicController.items}" var="item">
+                            <div class="main-col" data-image="../resources/images/direstraits.jpg" data-artist="#{item.artist.name}"
+                                data-song="#{item.name}" data-file="../resources/musics/Dire Straits - Money for Nothing.mp3">
+                                <img src="../resources/images/direstraits.jpg" />
+                                <h3>#{item.name}</h3>
+                                <p>#{item.artist.name}</p>
+                            </div>
+                        </p:repeat>   
                     </div>
                 </div>
             </div>
