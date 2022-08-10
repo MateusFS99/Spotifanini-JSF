@@ -56,6 +56,8 @@ public class MusicController implements Serializable {
     }
 
     public void create() {
+        
+        //validações
         persist(PersistAction.CREATE, ResourceBundle.getBundle("/Bundle").getString("MusicCreated"));
         if (!JsfUtil.isValidationFailed()) {
             items = null;    // Invalidate list of items to trigger re-query.
