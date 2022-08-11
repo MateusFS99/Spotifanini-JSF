@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    
+    <ui:composition template="/templateView.xhtml">
+        <ui:define name="body">
+            <div class="main">
+                <div class="main-wraper">
+                    <div class="main-row">
+                        <div class="main-row-title">
+                            <h2>Músicas</h2>
+                        </div>
+                        
+                        <p:repeat value="#{musicController.items}" var="item">
+                            <div id="main-col-music" class="main-col" data-image="../resources/images/#{item.image}.jpg" data-artist="#{item.artist.name}"
+                                data-song="#{item.name}" data-file="../resources/musics/#{item.audio}.mp3">
+                                <img src="../resources/images/#{item.image}.jpg" />
+                                <h3>#{item.name}</h3>
+                                <p>#{item.artist.name}</p>
+                            </div>
+                        </p:repeat>   
+                    </div>
+                </div>
+            </div>
+        </ui:define>
+    </ui:composition>
+</html>

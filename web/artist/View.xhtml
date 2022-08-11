@@ -3,11 +3,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui">
 
     <ui:composition>
-
         <p:dialog id="ArtistViewDlg" widgetVar="ArtistViewDialog" modal="true" resizable="false" appendTo="@(body)" header="Detalhes">
             <h:form id="ArtistViewForm">
                 <h:panelGroup id="display">
@@ -18,11 +16,13 @@
                         <h:outputText value="#{artistController.selected.name}" title="#{bundle.ViewArtistTitle_name}"/>
                         <h:outputText value="País de Origem"/>
                         <h:outputText value="#{artistController.selected.country}" title="#{bundle.ViewArtistTitle_country}"/>
+                        <h:outputText value="Imagem"/>
+                        <h:outputText value="#{artistController.selected.image}" title="#{bundle.CreateArtistTitle_image}"/>
                     </p:panelGrid>
                     <p:commandButton value="Fechar" onclick="ArtistViewDialog.hide()"/>
                 </h:panelGroup>
             </h:form>
         </p:dialog>
-
     </ui:composition>
+    
 </html>

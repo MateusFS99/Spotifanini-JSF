@@ -2,30 +2,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <ui:composition template="/template.xhtml">
-
-        <ui:define name="body">
-            <div class="main">
-                <div class="main-wraper">
-                    <div class="main-row">
-                        <div class="main-row-title">
-                            <h2>Músicas</h2>
-                        </div>
-                        <p:repeat value="#{musicController.items}" var="item">
-                            <div id="main-col-music" class="main-col" data-image="../resources/images/#{item.image}.jpg" data-artist="#{item.artist.name}"
-                                data-song="#{item.name}" data-file="../resources/musics/#{item.audio}.mp3">
-                                <img src="../resources/images/#{item.image}.jpg" />
-                                <h3>#{item.name}</h3>
-                                <p>#{item.artist.name}</p>
-                            </div>
-                        </p:repeat>   
-                    </div>
-                </div>
-            </div>
-        </ui:define>
-        <!--
         <ui:define name="body">
             <h:form id="MusicListForm">
                 <p:panel header="Lista de Músicas">
@@ -84,6 +65,5 @@
             <ui:include src="Edit.xhtml"/>
             <ui:include src="View.xhtml"/>
         </ui:define>
-        -->
     </ui:composition>
 </html>
