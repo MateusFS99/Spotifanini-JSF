@@ -38,7 +38,6 @@ public class Artist implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
-    @NotNull
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
     @Size(max = 30)
