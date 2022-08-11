@@ -8,8 +8,9 @@ package dao;
 import java.io.Serializable;
 import java.util.Collection;
 import javax.persistence.Basic;
-import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -38,14 +39,14 @@ public class Artist implements Serializable {
     @Id
     @Basic(optional = false)
     @NotNull
-    @Column(name = "id")
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
     @Size(max = 30)
-    @Column(name = "name")
     private String name;
     @Size(max = 40)
-    @Column(name = "country")
     private String country;
+    @Size(max = 40)
+    private String image;
     @OneToMany(mappedBy = "artist")
     private Collection<Music> musicCollection;
 
@@ -78,6 +79,14 @@ public class Artist implements Serializable {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     @XmlTransient

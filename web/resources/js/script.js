@@ -1,10 +1,13 @@
 var audioPlayer = document.getElementById('audio-player');
 var btnPlay = document.getElementById('btnPlay');
 var btnPause = document.getElementById('btnPause');
+var progressBar = document.querySelector('.player-control-progress-2');
 var loaded = false;
+var interval = null;
 
 btnPause.addEventListener('click', (e) => {
 
+    clearInterval(interval);
     e.preventDefault();
     audioPlayer.pause();
     btnPlay.style.display = "inline";
@@ -23,6 +26,11 @@ btnPlay.addEventListener('click', (e) => {
 
 function play() {
 
+    interval = setInterval(() => {
+        
+        progressBar.style.width = (audioPlayer.currentTime / audioPlayer.duration * 100) + "%";
+    }, 1000);
+    audioPlayer.volume = .1;
     audioPlayer.play();
     btnPlay.style.display = "none";
     btnPause.style.display = "inline";
@@ -30,7 +38,7 @@ function play() {
 
 const playSong = (file) => {
 
-    if (loaded == false) {
+    if(loaded == false) {
 
         audioPlayer.innerHTML = `<source src="` + file + `" type="audio/mp3">`;
         loaded = true;

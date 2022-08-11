@@ -7,8 +7,9 @@ package dao;
 
 import java.io.Serializable;
 import javax.persistence.Basic;
-import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -38,17 +39,18 @@ public class Music implements Serializable {
     @Id
     @Basic(optional = false)
     @NotNull
-    @Column(name = "id")
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
     @Size(max = 40)
-    @Column(name = "name")
     private String name;
     @Size(max = 4)
-    @Column(name = "release")
     private String release;
     @Size(max = 40)
-    @Column(name = "genre")
     private String genre;
+    @Size(max = 40)
+    private String image;
+    @Size(max = 40)
+    private String audio;
     @JoinColumn(name = "artist", referencedColumnName = "id")
     @ManyToOne
     private Artist artist;
@@ -90,6 +92,22 @@ public class Music implements Serializable {
 
     public void setGenre(String genre) {
         this.genre = genre;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getAudio() {
+        return audio;
+    }
+
+    public void setAudio(String audio) {
+        this.audio = audio;
     }
 
     public Artist getArtist() {

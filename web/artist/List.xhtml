@@ -15,7 +15,7 @@
                         </div>
                         <p:repeat value="#{artistController.items}" var="item">
                             <div class="main-col">
-                                <img src="../resources/images/direstraits.jpg" />
+                                <img src="../resources/images/#{item.image}.jpg" />
                                 <h3>#{item.name}</h3>
                                 <p>#{item.country}</p>
                             </div>

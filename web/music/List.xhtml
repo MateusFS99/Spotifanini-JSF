@@ -14,9 +14,9 @@
                             <h2>Músicas</h2>
                         </div>
                         <p:repeat value="#{musicController.items}" var="item">
-                            <div id="main-col-music" class="main-col" data-image="../resources/images/direstraits.jpg" data-artist="#{item.artist.name}"
-                                data-song="#{item.name}" data-file="../resources/musics/Dire Straits - Money for Nothing.mp3">
-                                <img src="../resources/images/direstraits.jpg" />
+                            <div id="main-col-music" class="main-col" data-image="../resources/images/#{item.image}.jpg" data-artist="#{item.artist.name}"
+                                data-song="#{item.name}" data-file="../resources/musics/#{item.audio}.mp3">
+                                <img src="../resources/images/#{item.image}.jpg" />
                                 <h3>#{item.name}</h3>
                                 <p>#{item.artist.name}</p>
                             </div>
