@@ -92,13 +92,13 @@ html, body {
 
 .sidebar-playlists {
 
-    padding: 20px 0;
+    padding: 10px 10px;
     border-top: 1px solid rgb(40, 40, 40);
 }
 
 .sidebar-playlists a {
 
-    margin: 10px 0;
+    margin: 15px 0;
     display: block;
     color: rgb(190, 190, 190);
     text-decoration: none;
@@ -182,7 +182,7 @@ html, body {
 
     width: 100%;
     padding: 5px;
-    height: 80px;
+    height: 90px;
     position: absolute;
     left: 0;
     bottom: 0;
@@ -193,6 +193,8 @@ html, body {
 .player-artist {
 
     width: 20%;
+    margin-top: 8px;
+    margin-left: 10px;
 }
 
 .player-artist img {
@@ -221,31 +223,51 @@ html, body {
 
 .player-control {
 
-    padding: 5px;
+    padding: 5px 20px 0px 0px;
     width: 60%;
     text-align: center;
 }
 
-.player-control-buttons a {
+.pass {
 
-    color: white;
-    margin: 8px 15px;
-    font-size: 18px;
+    color: rgb(94, 94, 94);
+    margin: 10px 10px;
+    font-size: 15px;
 }
 
-.player-control-progress {
+.pass:hover {
+
+    color: white;
+}
+
+.play-pause {
+    
+    color: white;
+    margin: 8px 15px;
+    font-size: 30px;
+}
+
+.player-control-track .time {
+    
+    display: none;
+    color: white;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.player-control-track-progress {
 
     width: 100%;
     max-width: 600px;
     height: 7px;
-    margin-top: 20px;
+    margin-top: 10px;
     position: relative;
     border-radius: 8px;
     display: inline-block;
     background: rgb(94, 94, 94);
 }
 
-.player-control-progress-2 {
+.player-control-track-progress-2 {
 
     position: absolute;
     left: 0;
