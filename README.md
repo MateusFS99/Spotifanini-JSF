@@ -1,4 +1,7 @@
 <h1 align="center">🎶 Spotifanini - Spotify Clone 🎶</h1>
+<div align="center" style="margin: 60px 0;">
+  <img src="/web/resources/images/print-index.png">
+</div>
 
 ## Technologies 💻
 
