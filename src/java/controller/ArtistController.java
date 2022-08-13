@@ -56,10 +56,21 @@ public class ArtistController implements Serializable {
     }
 
     public void create() {
-        persist(PersistAction.CREATE, ResourceBundle.getBundle("/Bundle").getString("ArtistCreated"));
-        if (!JsfUtil.isValidationFailed()) {
-            items = null;    // Invalidate list of items to trigger re-query.
-        }
+        
+        boolean flag = true;
+        
+        for(Artist artist : ejbFacade.findAll())
+            if(artist.getName().equals(selected.getName()))
+                flag = false;
+        if(flag) {
+            
+            persist(PersistAction.CREATE, ResourceBundle.getBundle("/Bundle").getString("ArtistCreated"));
+            if(!JsfUtil.isValidationFailed()) {
+                items = null;    // Invalidate list of items to trigger re-query.
+            }
+        } 
+        else
+            JsfUtil.addErrorMessage("Artista já Cadastrado!!");
     }
 
     public void update() {

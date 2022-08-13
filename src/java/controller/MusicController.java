@@ -57,11 +57,20 @@ public class MusicController implements Serializable {
 
     public void create() {
         
-        //validações
-        persist(PersistAction.CREATE, ResourceBundle.getBundle("/Bundle").getString("MusicCreated"));
-        if (!JsfUtil.isValidationFailed()) {
-            items = null;    // Invalidate list of items to trigger re-query.
-        }
+        boolean flag = true;
+        
+        for(Music music : ejbFacade.findAll())
+            if(music.getName().equals(selected.getName()) && music.getArtist().getId() == selected.getArtist().getId())
+                flag = false;
+        if(flag) {
+            
+            persist(PersistAction.CREATE, ResourceBundle.getBundle("/Bundle").getString("MusicCreated"));
+            if(!JsfUtil.isValidationFailed()) {
+                items = null;    // Invalidate list of items to trigger re-query.
+            }
+        } 
+        else
+            JsfUtil.addErrorMessage("Música já Cadastrada!!");
     }
 
     public void update() {
