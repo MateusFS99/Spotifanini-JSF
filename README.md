@@ -1,12 +1,12 @@
 <h1 align="center">🎶 Spotifanini - Spotify Clone 🎶</h1>
 
-<div align="center" style="margin: 60px 0;">
-  <img src="/web/resources/images/print-index.png">
-</div>
-
 ## About 🎯
 
 JSF Api of the Spotifanini application, using ``PrimeFaces`` for the front-end. Developed with ``JPA EclipseLink`` for the organization and simplification of the API persistence and using ``PostgresSQL`` relational database for data storage.
+
+<div align="center" style="margin: 60px 0;">
+  <img src="/web/resources/images/print-index.png">
+</div>
 
 ## Technologies 💻
 
